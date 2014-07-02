@@ -1,0 +1,21 @@
+#normalize cos data from various files and create light curve for cos data
+import numpy.ma as ma, glob, pyfits, numpy as np, matplotlib, pylab
+from pylab import *
+#insert filename
+hdu = pyfits.open('filename.fits')
+print hdu[1].data.names
+#insert filename
+data_cos = pyfits.getdata('filename.fits')
+x = data_cos.field('mjd')
+y = data_cos.field('counts')
+count_median = np.median(y)
+count_t = np.divide(y, count_median)
+print "Count Median:", count_median, "Counts: ", count_t
+#insert filename
+suptitle('filename.fits', fontsize=18, fontweight='bold')
+xlabel('TIME (MJD)')
+ylabel('NORMALIZED COUNTS')
+matplotlib.pyplot.scatter(x,count_t,linewidth=.001,color='blue')
+#insert filename
+pylab.savefig('filename.pdf')
+pylab.clf()
