@@ -1,4 +1,4 @@
-Predict-Standard-Deviation
+COS_DATA
 ==========================
 
-Gives targname, cenwave, expected std, measured std, and median count of objects observed with COS
+ANALYZE COS DATA WITH PYTHON AND PYRAF
