@@ -1,4 +1,4 @@
-COS_DATA
+COS_Data
 ==========================
 
-ANALYZE COS DATA WITH PYTHON AND PYRAF
+Analyze COS data with python and pyraf
