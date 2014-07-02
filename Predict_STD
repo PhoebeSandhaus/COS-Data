@@ -1,0 +1,18 @@
+#gives targname, cenwave, expected std, measured std, median count
+import numpy.ma as ma, glob, pyfits, numpy as np, matplotlib, pylab
+from pylab import *
+#insert file name
+hdu = pyfits.open('filename.fits')
+print hdu[1].data.names
+#insert file name
+data_cos = pyfits.getdata('filename.fits')
+x = data_cos.field('counts')
+count_median = np.median(x)
+count_t = np.divide(x, count_median)
+std = np.std(count_t)
+exp_std = count_median ** 0.5 / count_median
+print "Count Median:", count_median, "\n Expected STD:", exp_std, "\n Measured STD:", std
+#insert file name
+hedit filename.fits[0] TARGNAME .
+#insert file name
+hedit filename.fits[0] CENWAVE .
